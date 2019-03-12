@@ -1,0 +1,56 @@
+<div class="container">
+    <h3>{{resource_mode}} entry</h3>
+    <form name="jobForm" class="form-edit">
+        <p><i class="glyphicon glyphicon-chevron-right"></i> denotes a required field.</p>
+
+        <div class="control-group">
+            <label>Job Number (leave blank to auto-assign)</label>
+            <input type="text" class="form-control" name="job_number" ng-model="job.job_number" placeholder="Job Number">
+        </div>
+
+        <div class="control-group"
+             ng-class="{error: jobForm.date.$invalid && !jobForm.date.$pristine}">
+            <label>
+                <i class="glyphicon glyphicon-chevron-right"></i>
+                Date
+            </label>
+            <input type="text" class="form-control" name="date" ng-model="job.date" placeholder="YYYY-MM-DD" required>
+        </div>
+
+        <div class="control-group"
+             ng-class="{error: jobForm.client_name.$invalid && !jobForm.client_name.$pristine}">
+            <label>
+                <i class="glyphicon glyphicon-chevron-right"></i>
+                Client Name
+            </label>
+            <input type="text" class="form-control" name="client_name" ng-model="job.client_name" placeholder="Client's name" required>
+        </div>
+
+        <div class="control-group">
+            <label>Description</label>
+            <textarea name="description" class="form-control" ng-model="job.description" placeholder="Description"></textarea>
+        </div>
+
+        <div class="control-group">
+            <label>Initials</label>
+            <input type="text" class="form-control" name="initials" ng-model="job.initials" placeholder="Initials">
+        </div>
+
+        <div class="control-group">
+            <label>Invoice Date</label>
+            <input type="text" class="form-control" name="invoice_date" ng-model="job.invoice_date" placeholder="YYYY-MM-DD">
+        </div>
+
+        <div class="control-group">
+            <label>P#</label>
+            <input type="text" class="form-control" name="p_number" ng-model="job.p_number" placeholder="P Number">
+        </div>
+
+        <br>
+        <a href="#/" class="btn">Cancel</a>
+        <button ng-click="save()" ng-disabled="jobForm.$invalid"
+                class="btn btn-primary">Save</button>
+        <button ng-click="destroy()"
+                ng-show="job.$remove && user.role=='administrator'" class="btn btn-danger">Delete</button>
+    </form>
+</div>

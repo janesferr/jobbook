@@ -1,0 +1,5 @@
+notes:
+
+c:\wamp64\bin\php\php5.6.25>php c:\wamp64\www\jobbook\app\scripts\insert_user.php jane bjc4200 administrator
+1 row inserted.
+Successfully inserted user jane with role administrator.

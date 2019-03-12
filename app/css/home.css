@@ -1,0 +1,26 @@
+/* home.css */
+body {
+  padding-top: 140px;
+  padding-bottom: 20px;
+}
+
+.form-edit {
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.form-edit .form-control {
+    position: relative;
+    height: auto;
+
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-edit input[type="text"] {
+    margin-bottom: 5px;
+}
+
+.form-edit textarea {
+    margin-bottom: 5px;
+}

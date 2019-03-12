@@ -1,0 +1,77 @@
+<table class="table table-striped table-condensed table-hover">
+	<thead>
+	<tr>
+		<th ng-click="setOrderBy('job_number')">
+			<div>
+			Job #
+			<i class="glyphicon" 
+			   ng-class="{'glyphicon-sort-by-order': orderBy.asc, 'glyphicon-sort-by-order-alt': !orderBy.asc}"
+			   ng-show="orderBy.field == 'job_number'"></i>
+			</div>
+		</th>
+		<th ng-click="setOrderBy('date')">
+			<div>
+			Date
+			<i class="glyphicon" 
+			   ng-class="{'glyphicon-sort-by-order': orderBy.asc, 'glyphicon-sort-by-order-alt': !orderBy.asc}"
+			   ng-show="orderBy.field == 'date'"></i>
+			</div>
+		</th>
+		<th ng-click="setOrderBy('client_name')">
+			<div>
+			Client Name
+			<i class="glyphicon" 
+			   ng-class="{'glyphicon-sort-by-alphabet': orderBy.asc, 'glyphicon-sort-by-alphabet-alt': !orderBy.asc}"
+			   ng-show="orderBy.field == 'client_name'"></i>
+			</div>
+		</th>
+		<th ng-click="setOrderBy('description')">
+			<div>
+			Description
+			<i class="glyphicon" 
+			   ng-class="{'glyphicon-sort-by-alphabet': orderBy.asc, 'glyphicon-sort-by-alphabet-alt': !orderBy.asc}"
+			   ng-show="orderBy.field == 'description'"></i>
+			</div>
+		</th>
+		<th ng-click="setOrderBy('initials')">
+			<div>
+			Initials
+			<i class="glyphicon" 
+			   ng-class="{'glyphicon-sort-by-alphabet': orderBy.asc, 'glyphicon-sort-by-alphabet-alt': !orderBy.asc}"
+			   ng-show="orderBy.field == 'initials'"></i>
+			</div>
+		</th>
+		<th ng-click="setOrderBy('invoice_date')">
+			<div>
+			Invoice Date
+			<i class="glyphicon" 
+			   ng-class="{'glyphicon-sort-by-order': orderBy.asc, 'glyphicon-sort-by-order-alt': !orderBy.asc}"
+			   ng-show="orderBy.field == 'invoice_date'"></i>
+			</div>
+		</th>
+		
+		<th ng-click="setOrderBy('p_number')">
+			<div>
+			P#
+			<i class="glyphicon" 
+			   ng-class="{'glyphicon-sort-by-order': orderBy.asc, 'glyphicon-sort-by-order-alt': !orderBy.asc}"
+			   ng-show="orderBy.field == 'p_number'"></i>
+			</div>
+		</th>
+		<th><a href="#/new"><i class="glyphicon glyphicon-plus-sign"></i></a></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="job in jobs | orderBy:orderBy.field:!orderBy.asc">
+		<td>{{job.job_number}}</td>
+		<td>{{job.date}}</td>
+		<td>{{job.client_name}}</td>
+		<td>{{job.description}}</td>
+		<td>{{job.initials}}</td>
+		<td>{{job.invoice_date}}</td>
+		<td>{{job.p_number}}</td>
+		<td>
+			<a href="#/edit/{{job.job_number}}"><i class="glyphicon glyphicon-pencil"></i></a>
+		</td>
+	</tbody>
+</table>
